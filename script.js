@@ -1,30 +1,18 @@
-let map = document.getElementById("map");
+function toggleForm() {
+  document.getElementById("formBox").classList.toggle("hidden");
+}
 
 function addMarker() {
-    let title = document.getElementById("title").value.trim();
-    let desc = document.getElementById("description").value.trim();
+  const pinsContainer = document.getElementById("pins");
 
-    if (title === "" || desc === "") {
-        alert("Please fill in all fields.");
-        return;
-    }
+  const pin = document.createElement("div");
+  pin.className = "pin";
 
-    let marker = document.createElement("div");
-    marker.classList.add("marker");
+  // posición random de prueba
+  pin.style.left = (Math.random() * 80 + 10) + "%";
+  pin.style.top = (Math.random() * 80 + 10) + "%";
 
-    marker.innerHTML = `
-        <strong>${title}</strong><br>
-        <small>${desc}</small>
-        <hr>
-    `;
+  pinsContainer.appendChild(pin);
 
-    marker.style.background = "white";
-    marker.style.border = "1px solid black";
-    marker.style.padding = "10px";
-    marker.style.margin = "10px";
-
-    map.appendChild(marker);
-
-    document.getElementById("title").value = "";
-    document.getElementById("description").value = "";
+  toggleForm();
 }
