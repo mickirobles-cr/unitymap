@@ -1,50 +1,88 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f7ff;
-    padding: 20px;
-    text-align: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eaf1ff;
+  display: flex;
+  height: 100vh;
 }
 
-h1 {
-    color: #2b4d8f;
+/* PANEL LATERAL */
+.sidebar {
+  width: 220px;
+  background: white;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
-#map {
-    width: 100%;
-    height: 400px;
-    background: #d6e4ff;
-    border: 2px solid #2b4d8f;
-    margin-bottom: 20px;
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #6aa0ff;
+  margin-bottom: 10px;
+}
+
+.side-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  background: #6aa0ff;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.side-btn:hover {
+  background: #4d83e6;
+}
+
+/* MAPA */
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PINES */
+.pin {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* FORMULARIO */
 .form-box {
-    width: 90%;
-    max-width: 400px;
-    background: white;
-    padding: 20px;
-    margin: auto;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  width: 280px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-}
+.hidden { display: none; }
 
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #2b4d8f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1f3a6b;
+form-box input,
+form-box textarea {
+  width: 100%;
 }
