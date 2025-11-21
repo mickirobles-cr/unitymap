@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnityMap</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UnityMap</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-    <h1>UnityMap – Help Point Map</h1>
-    <p>Add help points on the map to promote unity and support in your community.</p>
-
-    <div id="map"></div>
-
-    <div class="form-box">
-        <h2>Add a Help Point</h2>
-        <input type="text" id="title" placeholder="Title (Food Donation, Tutoring, etc.)">
-        <textarea id="description" placeholder="Describe how you're helping"></textarea>
-        <button onclick="addMarker()">Add to Map</button>
+  <!-- PANEL LATERAL -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="https://i.imgur.com/1X4vYxQ.png" class="avatar" />
+      <h2>UnityMap</h2>
     </div>
 
-    <script src="script.js"></script>
+    <button class="side-btn" onclick="toggleForm()">➕ Add Help Point</button>
+    <button class="side-btn">📍 View All Points</button>
+  </aside>
+
+  <!-- MAPA -->
+  <main class="map-container">
+    <img src="https://i.imgur.com/UeWRJzY.png" class="map-image">
+    <div id="pins"></div>
+  </main>
+
+  <!-- FORMULARIO -->
+  <div id="formBox" class="form-box hidden">
+    <h3>Add a Help Point</h3>
+    <input type="text" id="title" placeholder="Title (Food donation, tutoring…)" />
+    <textarea id="description" placeholder="Describe how you're helping"></textarea>
+    <button onclick="addMarker()">Add Point</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
